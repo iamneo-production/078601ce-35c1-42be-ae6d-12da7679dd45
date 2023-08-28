@@ -1,0 +1,58 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: TECHNICIAN-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/InstallationData
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      shows-details: always
+      circuitbreakers:
+        enabled: true
+  metrics:
+    tags:
+      application: TECHNICIAN-SERVICE
+
+
+
+#resilience4j:
+#  circuitbreaker:
+#    instances:
+#      customerService:
+#        registerHealthIndicator: true
+#        eventConsumerBufferSize: 10
+#        failureRateThreshold: 50
+#        minimumNumberOfCalls: 5
+#        automaticTransitionFromOpenToHalfOpenEnabled: true
+#        waitDurationInOpenState: 6s
+#        permittedNumberOfCallsInHalfOpenState: 3
+#        slidingWindowSize: 10
+#        slidingWindowType: COUNT_BASED
