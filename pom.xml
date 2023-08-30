@@ -4,7 +4,7 @@
     <groupId>com.houari</groupId>
     <artifactId>iamneo-production_078601ce-35c1-42be-ae6d-12da7679dd45</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <properties>
+     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <sonar.organization>iamneo-production</sonar.organization>
@@ -20,29 +20,7 @@
             <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-<groupId>org.springframework.cloud</groupId>
-<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-</dependency>
-<dependency>
-<groupId>org.springframework.cloud</groupId>
-<artifactId>spring-cloud-starter-openfeign</artifactId>
-</dependency>
-
- 
-
-        <dependency>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-devtools</artifactId>
-<scope>runtime</scope>
-<optional>true</optional>
-</dependency>
-<dependency>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-actuator</artifactId>
-</dependency>
     </dependencies>
-    
     <build>
         <pluginManagement>
             <plugins>
